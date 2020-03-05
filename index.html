@@ -3,36 +3,37 @@
 <html>
 <head>
 	<title>Meu primeiro bootstrap</title>
+	<meta charset="utf-8">	
 
 	<!-- Css -->
-	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
+	<link href="public/css/bootstrap.min.css" rel="stylesheet">
+
 
 </head>
 <body>
-	<p>Olá mundo</p>
-	<!-- table-hover e table-striper são elementos do bootstrap -->
-	<table class="table table-hover table-striper">
-		<tr>
-			<th>#</th>
-			<th>Cursos</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Bootstrap</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>HTML</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Jquery</td>
-		</tr>
-	</table>
-	<footer>
+	<div class="container">
+		<h1>Popovers</h1>
+		<!-- Top -->
+		<button class="btn btn-primary" title="Abusado" data-toggle="popover" data-content="Clicou porque meu caro ?" data-placement="top">Não clique </button>		
+		<!-- Top -->
+		<button class="btn btn-primary" title="Respeite o não" data-toggle="popover" data-content="Ta maluco, mano.. Não é não." data-placement="right">Não clique </button>	
+		<!-- Top -->
+		<button class="btn btn-primary" data-toggle="popover" data-content="Já falei que não era pra clicar, meu querido" data-placement="left"> Não clique, você já foi avisado </button>	
+		<!-- baixo -->
+		<button class="btn btn-primary" data-toggle="popover" data-content="Insistente você, não ?" data-placement="bottom">Aqui também não </button>	
+
+	</div>
+
+
+    <footer>
 		<!-- JS -->
-		<script type="public/js/jquery.js"></script>
-		<script type="public/js/bootstrap.bundle.min.js"></script>
+		<script src="public/js/jquery.js"></script>
+		<script src="public/js/bootstrap.bundle.min.js"></script>
+		<script >
+			$(function(){
+				$('[data-toggle="popover"]').popover()
+			});
+		</script>
 	</footer>
 </body>
 </html>
