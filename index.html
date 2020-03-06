@@ -12,15 +12,15 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Popovers</h1>
+		<h1>Tooltips</h1>
 		<!-- Top -->
-		<button class="btn btn-primary" title="Abusado" data-toggle="popover" data-content="Clicou porque meu caro ?" data-placement="top">Não clique </button>		
+		<button class="btn btn-primary" title="Abusado" data-toggle="tooltip"  data-placement="top">Não clique </button>		
 		<!-- Top -->
-		<button class="btn btn-primary" title="Respeite o não" data-toggle="popover" data-content="Ta maluco, mano.. Não é não." data-placement="right">Não clique </button>	
+		<button class="btn btn-primary" title="Respeite o não" data-toggle="tooltip" data-content="Ta maluco, mano.. Não é não." data-placement="right">Não clique </button>	
 		<!-- Top -->
-		<button class="btn btn-primary" data-toggle="popover" data-content="Já falei que não era pra clicar, meu querido" data-placement="left"> Não clique, você já foi avisado </button>	
+		<button class="btn btn-primary" data-toggle="tooltip" title="Já falei que não era pra clicar, meu querido" data-placement="left"> Não clique, você já foi avisado </button>	
 		<!-- baixo -->
-		<button class="btn btn-primary" data-toggle="popover" data-content="Insistente você, não ?" data-placement="bottom">Aqui também não </button>	
+		<button class="btn btn-primary" data-toggle="tooltip" title="Insistente você, não ?" data-placement="bottom">Aqui também não </button>	
 
 	</div>
 
@@ -29,9 +29,10 @@
 		<!-- JS -->
 		<script src="public/js/jquery.js"></script>
 		<script src="public/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript"></script>
 		<script >
 			$(function(){
-				$('[data-toggle="popover"]').popover()
+				$('[data-toggle="tooltip"]').tooltip()
 			});
 		</script>
 	</footer>
