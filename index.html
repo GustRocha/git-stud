@@ -12,27 +12,76 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Tooltips</h1>
-		<!-- Top -->
-		<button class="btn btn-primary" title="Abusado" data-toggle="tooltip"  data-placement="top">Não clique </button>		
-		<!-- Top -->
-		<button class="btn btn-primary" title="Respeite o não" data-toggle="tooltip" data-content="Ta maluco, mano.. Não é não." data-placement="right">Não clique </button>	
-		<!-- Top -->
-		<button class="btn btn-primary" data-toggle="tooltip" title="Já falei que não era pra clicar, meu querido" data-placement="left"> Não clique, você já foi avisado </button>	
-		<!-- baixo -->
-		<button class="btn btn-primary" data-toggle="tooltip" title="Insistente você, não ?" data-placement="bottom">Aqui também não </button>	
+		<h1>Keugen</h1>
+		<h2> A sua loja do mal </h2>
+
+		<button class="btn btn-primary" data-nome="Suporte" data-toggle="modal" data-target="#conteudoModal">Fale conosco</button>
+		
+		<button class="btn btn-primary" data-nome="RH" data-toggle="modal" data-target="#conteudoModal">Trabalhe comigo</button>
+		
+		<button class="btn btn-primary" data-nome="Banco" data-toggle="modal" data-target="#conteudoModal">Doações</button>
+
+		<button class="btn btn-primary" data-nome="SAC" data-toggle="modal" data-target="#conteudoModal">Criticas</button>
+
+
+		<!-- Modal -->
+		<div id="conteudoModal" class="modal fade">
+			<div class="modal-dialog modal-xl">
+				<div class="modal-content">
+					<!-- título -->
+					<div class="modal-header">
+						<h4 class="modal-title">Envie sua mensagem</h4>
+						<button class="close" data-dismiss="modal" arial-label="Fechar">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<!-- conteúdo -->
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-4">
+								<span>Destinatário: </span>
+							</div>
+							<div class="col-8">
+								<input type="text" name="para" class="form-control">
+							</div>						
+							
+						</div><br>
+						<div class="row">
+							<div class="col-4">
+								<span>Mensagem: </span>
+							</div>
+							<div class="col-8">
+								<textarea class="form-control"></textarea>
+							</div>
+						</div>
+					</div>
+
+					<!-- rodapé -->
+					<div class="modal-footer">
+						<button class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+						<button class="btn btn-primary" data-dismiss="modal">Enviar</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
 
 	</div>
 
 
-    <footer>
+	<footer>
 		<!-- JS -->
 		<script src="public/js/jquery.js"></script>
 		<script src="public/js/bootstrap.bundle.min.js"></script>
-		<script type="text/javascript"></script>
-		<script >
-			$(function(){
-				$('[data-toggle="tooltip"]').tooltip()
+		<script type="text/javascript">
+			$('#conteudoModal').on('show.bs.modal', function(event) {
+				var button = $(event.relatedTarget);
+				var recipient = button.data('nome');
+				var modal = $(this);
+				modal.find('.modal-title').text('Mensagem para '+recipient);
+				modal.find('.modal-body input').val(recipient);
 			});
 		</script>
 	</footer>
